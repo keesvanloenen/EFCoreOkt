@@ -4,19 +4,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyWebShop.ConsoleApp.Model;
 
-//[PrimaryKey(nameof(Name), "Ander")]
+//[PrimaryKey(nameof(Name), "Anders")]
 public class Customer
 {
-    [Key]
+    //[Key]
     public int Id { get; set; }
 
-    [Required]
-    [MaxLength(100)]
+    //[Required]
+    //[MaxLength(100)]
     public required string Name { get; set; }
 
-    [MaxLength(20)]
+    //[MaxLength(20)]
     public string? PhoneNumber { get; set; }
 
-    [Column(TypeName = "DateTime2(0)")]
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public decimal CreditLimit { get; set; }
+
+    //[Column(TypeName = "DateTime2(0)")]
+    public DateTime CreatedAt { get; set; }
 }

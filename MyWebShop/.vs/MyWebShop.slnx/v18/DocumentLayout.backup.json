@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Work\\EFCoreOkt\\MyWebShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|c:\\work\\efcoreokt\\mywebshop\\mywebshop.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|solutionrelative:mywebshop.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|c:\\work\\efcoreokt\\mywebshop\\mywebshop.consoleapp\\dal\\webshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|solutionrelative:mywebshop.consoleapp\\dal\\webshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|c:\\work\\efcoreokt\\mywebshop\\mywebshop.consoleapp\\dal\\configurations\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|solutionrelative:mywebshop.consoleapp\\dal\\configurations\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|c:\\work\\efcoreokt\\mywebshop\\mywebshop.consoleapp\\model\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|solutionrelative:mywebshop.consoleapp\\model\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|c:\\work\\efcoreokt\\mywebshop\\mywebshop.consoleapp\\dal\\webshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|solutionrelative:mywebshop.consoleapp\\dal\\webshopdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|c:\\work\\efcoreokt\\mywebshop\\mywebshop.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E0094A-1017-1D2B-0893-3FE476FF6D58}|MyWebShop.ConsoleApp\\MyWebShop.ConsoleApp.csproj|solutionrelative:mywebshop.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,40 +63,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Model\\Customer.cs",
-              "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\Model\\Customer.cs",
-              "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Model\\Customer.cs*",
-              "RelativeToolTip": "MyWebShop.ConsoleApp\\Model\\Customer.cs*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBMAAAAnAAAAAAAAAA==",
+              "Title": "CustomerConfiguration.cs",
+              "DocumentMoniker": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
+              "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
+              "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
+              "RelativeToolTip": "MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T09:47:35.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-28T13:53:27.002Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Model\\Customer.cs",
+              "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\Model\\Customer.cs",
+              "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Model\\Customer.cs",
+              "RelativeToolTip": "MyWebShop.ConsoleApp\\Model\\Customer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T09:47:35.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "WebShopDbContext.cs",
               "DocumentMoniker": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "RelativeToolTip": "MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwBcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T09:04:02.203Z"
+              "WhenOpened": "2026-10-28T09:04:02.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\Program.cs",
-              "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Program.cs*",
-              "RelativeToolTip": "MyWebShop.ConsoleApp\\Program.cs*",
+              "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\Program.cs",
+              "RelativeToolTip": "MyWebShop.ConsoleApp\\Program.cs",
               "ViewState": "AgIAABcAAABwZmZmZkYwwCYAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T08:56:15.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-28T08:56:15.633Z"
             }
           ]
         },

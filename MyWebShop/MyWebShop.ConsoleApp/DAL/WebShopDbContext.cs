@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyWebShop.ConsoleApp.DAL.Configurations;
 using MyWebShop.ConsoleApp.Model;
 
 namespace MyWebShop.ConsoleApp.DAL;
@@ -14,5 +15,12 @@ public class WebShopDbContext : DbContext
 
     public WebShopDbContext(DbContextOptions<WebShopDbContext> options) : base(options)
     {
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.ApplyConfiguration(new CustomerConfiguration());
     }
 }
