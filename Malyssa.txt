@@ -1,0 +1,1 @@
+https://medium.com/@arttech/the-great-ef-core-trap-valuegeneratedonaddorupdate-vs-valuegeneratedonadd-2fe8209db1ed

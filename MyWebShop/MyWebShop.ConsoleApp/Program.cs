@@ -36,7 +36,7 @@ internal class Program
 
         foreach (var customer in customers)
         {
-            Console.WriteLine($"{customer.Id} - {customer.Name}");
+            Console.WriteLine($"{customer.Id} - {customer.Name} (gemaakt op: {customer.CreatedAt:dd MM yyyy})");
         }
     }
 }
