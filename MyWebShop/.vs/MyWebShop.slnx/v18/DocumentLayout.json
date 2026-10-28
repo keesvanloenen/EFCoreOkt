@@ -70,8 +70,7 @@
               "RelativeToolTip": "MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T13:53:27.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-28T13:53:27.002Z"
             },
             {
               "$type": "Document",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "MyWebShop.ConsoleApp\\Model\\Customer.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAIwBMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T09:47:35.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-28T09:47:35.836Z"
             },
             {
               "$type": "Document",
@@ -94,7 +92,7 @@
               "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "RelativeToolTip": "MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-28T09:04:02.203Z",
               "EditorCaption": ""

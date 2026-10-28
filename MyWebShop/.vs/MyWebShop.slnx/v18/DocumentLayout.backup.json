@@ -68,9 +68,10 @@
               "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
               "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
               "RelativeToolTip": "MyWebShop.ConsoleApp\\DAL\\Configurations\\CustomerConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T13:53:27.002Z"
+              "WhenOpened": "2026-10-28T13:53:27.002Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -82,7 +83,8 @@
               "RelativeToolTip": "MyWebShop.ConsoleApp\\Model\\Customer.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAIwBMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T09:47:35.836Z"
+              "WhenOpened": "2026-10-28T09:47:35.836Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -92,7 +94,7 @@
               "RelativeDocumentMoniker": "MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "ToolTip": "C:\\Work\\EFCoreOkt\\MyWebShop\\MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
               "RelativeToolTip": "MyWebShop.ConsoleApp\\DAL\\WebShopDbContext.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAuwBcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-28T09:04:02.203Z",
               "EditorCaption": ""

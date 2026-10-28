@@ -1,0 +1,85 @@
+using Microsoft.Extensions.DependencyInjection;
+using System.Text;
+using Verzekeringen.App.Polissen;
+
+namespace Verzekeringen.App;
+
+/* 
+   We hebben eerder Dependency Injection (DI) via de constructor gezien:
+   var tariefApi = new TariefApi();
+   var autoPolis = new AutoPolis(tariefApi);
+  
+   Program maakte hier nog steeds zélf alle objecten.
+   Bij Inversion of Control (IoC), laat je een DI container deze objecten aanmaken.
+   Die container is de 'ouder die het kind zijn drinken geeft' 😉
+  
+   Let op: binnen de AutoPolis blijft alles hetzelfde, zoals:
+
+   public AutoPolis(ITariefApi tariefApi)
+   {
+       _tariefApi = tariefApi;
+   }
+*/
+
+/*
+   0. Voeg via NuGet het package Microsoft.Extensions.DependencyInjection toe
+      Bevat de DI-container van Microsoft met:
+      - ServiceCollection: verzameling van registraties
+      - ServiceProvider: container die objecten aanmaakt
+      - GetRequiredService<T>(): vraagt een object op uit de container    
+*/
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+
+        // 1. Maak een ServiceCollection en registreer de relatie tussen interface en implementatie
+        var services = new ServiceCollection();
+
+        services.AddTransient<ITariefApi, TariefApi>();  // als iemand een ITariefApi nodig heeft, geef dan een TariefApi (kan ook FakeTariefApi zijn)
+        services.AddTransient<AutoPolis>();              // de container maakt een AutoPolis aan en ziet dat de constructor een ITariefApi nodig heeft 
+                                                         // - in de container wordt gezocht naar de registratie van ITariefApi
+                                                         // - hij maakt een TariefApi
+                                                         // - en geeft deze mee aan de constructor van AutoPolis (volautomisch)
+
+        // 2. Bouw de ServiceProvider, dit is de daadwerkelijke container (bevat alle geregistreerde services en stelt een volledige objectgrafiek samen
+        using var serviceProvider = services.BuildServiceProvider();
+        DemoDependencyInjection(serviceProvider);
+    }
+
+    private static void DemoDependencyInjection(ServiceProvider serviceProvider)
+    {
+        var klant = new Klant("D. de Jong");
+
+        // 3. Maak een AutoPolis. Je hoeft hier geen TariefApi mee te geven. Dat doet de container automatisch
+        var autoPolis = serviceProvider.GetRequiredService<AutoPolis>();
+
+        autoPolis.Code = "A1";
+        autoPolis.Klant = klant;
+
+        autoPolis.BerekenPremie();
+
+        Console.WriteLine($"AutoPolis premie: {autoPolis.Premie}");
+    }
+
+    /* Tenslotte de 3 lifetime smaken:
+     
+       a. Transient:
+          services.AddTransient<ITariefApi, TariefApi>();
+          Elke keer dat de service wordt opgevraagd, wordt een nieuwe instantie gemaakt (geschikt voor lichte, stateless services), bijv:
+          var api1 = serviceProvider.GetRequiredService<ITariefApi>();
+          var api2 = serviceProvider.GetRequiredService<ITariefApi>();  // api1 en api2 zijn verschillende objecten
+     
+       b. Singleton:
+          services.AddSingleton<ITariefApi, TariefApi>();
+          De container maakt één instantie; elke aanvraag krijgt dezelfde instantie (geschikt voor stateless services of gedeelde configuratie/cache)
+          var api1 = serviceProvider.GetRequiredService<ITariefApi>();
+          var api2 = serviceProvider.GetRequiredService<ITariefApi>();  // api1 en api2 verwijzen naar hetzelfde object 
+
+       c. Scoped:
+          services.AddScoped<ITariefApi, TariefApi>();
+          Eén intantie per scope, in webapplicaties is een scope vaak één HTTP-request
+    */
+}
