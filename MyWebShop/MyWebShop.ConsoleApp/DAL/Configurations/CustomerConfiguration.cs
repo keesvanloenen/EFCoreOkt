@@ -30,5 +30,14 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
             .Property(c => c.CreatedAt)
             .HasColumnType("datetime2(0)")
             .HasDefaultValueSql("SYSDATETIME()");
+
+        builder
+            .Property(c => c.CreatedAt)
+            .HasColumnName("CustomerNumber");
+
+        builder
+            .HasMany(c => c.Orders)
+            .WithOne(o => o.Customer)
+            .HasForeignKey(o => o.CustomerId);
     }
 }

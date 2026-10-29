@@ -21,4 +21,8 @@ public class Customer
 
     //[Column(TypeName = "DateTime2(0)")]
     public DateTime CreatedAt { get; set; }
+
+
+    // Navigation property to Orders (many kant van de one-to-many)
+    public List<Order> Orders { get; set; } = [];
 }
