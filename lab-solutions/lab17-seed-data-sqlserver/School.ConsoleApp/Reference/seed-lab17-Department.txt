@@ -1,0 +1,34 @@
+﻿        builder.HasData(
+            new Department
+            {
+                Id = 1,
+                Name = "Engineering",
+                Budget = 350000.0000M,
+                StartDate = new DateOnly(2007, 1, 9),
+                AdministratorId = 31
+            },
+            new Department
+            {
+                Id = 2,
+                Name = "English",
+                Budget = 120000.0000M,
+                StartDate = new DateOnly(2007, 1, 9),
+                AdministratorId = 34
+            },
+            new Department
+            {
+                Id = 3,
+                Name = "Economics",
+                Budget = 200000.0000M,
+                StartDate = new DateOnly(2007, 1, 9),
+                AdministratorId = 33
+            },
+            new Department
+            {
+                Id = 4,
+                Name = "Mathematics",
+                Budget = 250000.0000M,
+                StartDate = new DateOnly(2007, 1, 9),
+                AdministratorId = 32
+            }
+        );

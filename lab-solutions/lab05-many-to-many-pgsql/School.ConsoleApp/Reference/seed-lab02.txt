@@ -1,0 +1,64 @@
+        List<Person> people =
+        [
+            new Person { LastName = "Fakhouri", FirstName = "Fadi" },
+            new Person { LastName = "Stewart", FirstName = "Jasmine" },
+            new Person { LastName = "Xu", FirstName = "Kristen" },
+            new Person { LastName = "Van Houten", FirstName = "Roger" },
+            new Person { LastName = "Barzdukas", FirstName = "Gytis" },
+            new Person { LastName = "Justice", FirstName = "Peggy" },
+            new Person { LastName = "Li", FirstName = "Yan" },
+            new Person { LastName = "Norman", FirstName = "Laura" },
+            new Person { LastName = "Olivotto", FirstName = "Nino" },
+            new Person { LastName = "Tang", FirstName = "Wayne" },
+            new Person { LastName = "Alonso", FirstName = "Meredith" },
+            new Person { LastName = "Lopez", FirstName = "Sophia" },
+            new Person { LastName = "Browning", FirstName = "Meredith" },
+            new Person { LastName = "Anand", FirstName = "Arturo" },
+            new Person { LastName = "Walker", FirstName = "Alexandra" },
+            new Person { LastName = "Powell", FirstName = "Carson" },
+            new Person { LastName = "Jai", FirstName = "Damien" },
+            new Person { LastName = "Carlson", FirstName = "Robyn" },
+            new Person { LastName = "Bryant", FirstName = "Carson" },
+            new Person { LastName = "Suarez", FirstName = "Robyn" },
+            new Person { LastName = "Holt", FirstName = "Roger" },
+            new Person { LastName = "Alexander", FirstName = "Carson" },
+            new Person { LastName = "Morgan", FirstName = "Isaiah" },
+            new Person { LastName = "Martin", FirstName = "Randall" },
+            new Person { LastName = "Rogers", FirstName = "Cody" },
+            new Person { LastName = "White", FirstName = "Anthony" },
+            new Person { LastName = "Griffin", FirstName = "Rachel" },
+            new Person { LastName = "Shan", FirstName = "Alicia" },
+            new Person { LastName = "Gao", FirstName = "Erica" },
+            new Person { LastName = "Abercrombie", FirstName = "Kim" },
+            new Person { LastName = "Harui", FirstName = "Roger" },
+            new Person { LastName = "Zheng", FirstName = "Roger" },
+            new Person { LastName = "Kapoor", FirstName = "Candace" },
+        ];
+        context.AddRange(people);
+        context.SaveChanges();
+
+        List<Course> courses =
+        [
+            new Course { Id = 1045, Title = "Calculus", Credits = 4 },
+            new Course { Id = 1050, Title = "Chemistry", Credits = 4 },
+            new Course { Id = 1061, Title = "Physics", Credits = 4 },
+            new Course { Id = 2021, Title = "Composition", Credits = 3 },
+            new Course { Id = 2030, Title = "Poetry", Credits = 2 },
+            new Course { Id = 2042, Title = "Literature", Credits = 4 },
+            new Course { Id = 3141, Title = "Trigonometry", Credits = 4 },
+            new Course { Id = 4022, Title = "Microeconomics", Credits = 3 },
+            new Course { Id = 4041, Title = "Macroeconomics", Credits = 3},
+            new Course { Id = 4061, Title = "Quantitative", Credits = 2 },
+        ];
+        context.AddRange(courses);
+        context.SaveChanges();
+
+        List<Department> departments =
+        [
+            new Department { Name = "Engineering", Budget = 350000.0m, StartDate = new DateOnly(2007, 9, 1) },
+            new Department { Name = "English", Budget = 120000.0m, StartDate = new DateOnly(2007, 9, 1) },
+            new Department { Name = "Economics", Budget = 200000.0m, StartDate = new DateOnly(2007, 9, 1) },
+            new Department { Name = "Mathematics", Budget = 250000.0m, StartDate = new DateOnly(2007, 9, 1) },
+        ];
+        context.AddRange(departments);
+        context.SaveChanges();

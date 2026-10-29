@@ -32,12 +32,20 @@ public class WebShopDbContext : DbContext
             //.HasKey(pc => pc.Product_Id)
             .HasKey(pc => new { pc.Product_Id, pc.Category_Id });
 
+        // Deze stap is nodig als de kolomnaam afwijkend is:
+        // dus Category_Id in plaats van CategoryId
+        // 🥸 👇
         // Category naar ProductCategory
         modelBuilder.Entity<ProductCategory>()
             .HasOne(pc => pc.Category)
             .WithMany(c => c.ProductCategorieen)
             .HasForeignKey(pc => pc.Category_Id);
 
+        // Deze stap is nodig als de kolomnaam afwijkend is:
+        // dus Product_Id in plaats van ProductId
+        // 🥸 👇
+        // Deze stap is nodig als de kolomnaam afwijkend is:
+        // dus Category_Id in plaats van CategoryId
         // Product naar ProductCategory
         modelBuilder.Entity<ProductCategory>()
             .HasOne(pc => pc.Product)

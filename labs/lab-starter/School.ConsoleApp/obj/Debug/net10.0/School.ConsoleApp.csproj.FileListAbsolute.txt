@@ -1,0 +1,15 @@
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\bin\Debug\net10.0\School.ConsoleApp.exe
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\bin\Debug\net10.0\School.ConsoleApp.deps.json
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\bin\Debug\net10.0\School.ConsoleApp.runtimeconfig.json
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\bin\Debug\net10.0\School.ConsoleApp.dll
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\bin\Debug\net10.0\School.ConsoleApp.pdb
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.AssemblyInfo.cs
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.sourcelink.json
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.dll
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\refint\School.ConsoleApp.dll
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.pdb
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\School.ConsoleApp.genruntimeconfig.cache
+C:\Users\keesl\azure-devops\DDAS\labs\lab-starter\School.ConsoleApp\obj\Debug\net10.0\ref\School.ConsoleApp.dll
