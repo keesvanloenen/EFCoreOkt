@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyWebShop.ConsoleApp.DAL;
 using MyWebShop.ConsoleApp.Model;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace MyWebShop.ConsoleApp;
@@ -20,11 +19,78 @@ internal class Program
 
         BuildDatabase(options);
         DataSeed(options);
-        
-        ShowCustomers(options);
+
+        //ShowCustomers(options);
         //ShowCustomer(options);
         //ShowOrders(options);
         //ShowCustomersAndOrders(options);
+        //ExplicitLoading(options);
+        ProjectionAlsReadOnlyHetGevalIs(options);
+
+    }
+
+    private static void ProjectionAlsReadOnlyHetGevalIs(DbContextOptions<WebShopDbContext> options)
+    {
+        using var context = new WebShopDbContext(options);
+
+        var customersTeVeel = context.Customers.Include(c => c.Orders);
+        Console.WriteLine(customersTeVeel.ToQueryString());
+
+        var customers = context.Customers
+                .Select(c => new
+                {
+                    c.Id,
+                    c.Name,
+                    OrderInfo = c.Orders.Select(o => new
+                    {
+                        o.OrderDate,
+                        o.TotalAmount
+                    })
+                });
+
+        Console.WriteLine(customers.ToQueryString());
+                
+
+        foreach (var customer in customers)
+        {
+            Console.WriteLine($"{customer.Id} {customer.Name}");
+
+            foreach(var order in customer.OrderInfo)
+            {
+                Console.WriteLine($"{order.OrderDate,11:yyyymmdd} {order.TotalAmount,5:C}");
+            }
+
+        }
+    }
+
+    private static void ExplicitLoading(DbContextOptions<WebShopDbContext> options)
+    {
+        Console.Write("Enter the customerid: ");
+        string input = Console.ReadLine() ?? string.Empty;
+
+        var customerId = int.Parse(input);
+
+        using var context = new WebShopDbContext(options);
+
+        Customer? customer = context.Customers.Find(customerId);
+
+        if (customer == null)
+        {
+            Console.WriteLine("Jammer");
+            return;
+        }
+
+        // 🎺 tadaa explicit loading
+        context.Entry(customer)
+            .Collection(c => c.Orders)      // bij iets enkelvouds moet het .Reference zijn ipv .Collection
+            .Load();
+
+        Console.WriteLine($"De orders voor klant: {customerId}");
+
+        foreach (var order in customer.Orders)
+        {
+            Console.WriteLine($"\t - {order.Id} datum: {order.OrderDate}");
+        }
     }
 
     private static void ShowCustomers(DbContextOptions<WebShopDbContext> options)
