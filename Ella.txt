@@ -1,0 +1,62 @@
+Stappen om een expliciete many to many tabel te maken:
+
+1. Bouw de Koppel tabel:
+
+public class Enrollment
+{
+    public int CourseId { get; set; }
+    public int StudentId { get; set; }
+    public Course Course { get; set; } = null!;
+    public Student Student { get; set; } = null!;
+
+    public decimal? Grade { get; set; }
+}
+
+2. Pas de 2 gerelateerde modellen aan:
+
+public class Student: Person
+{
+    public DateOnly EnrollmentDate { get; set; }
+    public List<Enrollment> Enrollments { get; } = [];	// 👈
+}
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = null!;
+    public int Credits { get; set; }
+
+    public List<Instructor> Instructors { get; } = [];
+    public List<Enrollment> Enrollments { get; } = [];  // 👈
+}
+
+3. Voeg configuratie toe in OnModelCreating in de DbContext, het liefst via een apart configuratie bestandje
+
+public class EnrollmentConfiguration : IEntityTypeConfiguration<Enrollment>
+{
+    public void Configure(EntityTypeBuilder<Enrollment> builder)
+    {
+	// Composite Primary Key
+        builder.HasKey(e => new { e.StudentId, e.CourseId });
+
+	// ---- Optioneel bij afwijkende kolomnamen: ----
+	builder
+	    .HasOne(e => e.Course)
+	    .WithMany(c => c.Enrollments)
+	    .HasForeignKey(e => e.CourseId);
+
+	builder
+	    .HasOne(e => e.Student)
+	    .WithMany(s => s.Enrollments)
+	    .HasForeignKey(e => e.StudentId);
+	// ----------------------------------------------
+
+        builder.Property(e => e.Grade)
+            .IsRequired(false)
+            .HasColumnType("decimal(3,2)");
+    }
+}
+
+ 
+
+
