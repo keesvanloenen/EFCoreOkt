@@ -1,9 +1,6 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MyWebShop.ConsoleApp.DAL;
 using MyWebShop.ConsoleApp.Model;
-using System.Formats.Tar;
-using System.Net.WebSockets;
 using System.Text;
 
 namespace MyWebShop.ConsoleApp;
@@ -16,6 +13,7 @@ internal class Program
 
         var options = new DbContextOptionsBuilder<WebShopDbContext>()
             .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyWebShop;ConnectRetryCount=0")
+            //.UseSqlServer(@"Server=127.0.0.1,1433;Database=MijnWebshop;User=sa;Password=geheim;TrustServerCertificate=True")
             .Options;
 
 
@@ -30,8 +28,68 @@ internal class Program
         //ProjectionAlsReadOnlyHetGevalIs(options);
 
         //AddCustomerAndOrders(options);
-        Concurrency(options);
+        //Concurrency(options);
+        ExecuteSql(options);
+        //FromSql(options);
+        FromSqlStoredProcedureAanroepen(options);
     }
+
+    private static void FromSqlStoredProcedureAanroepen(DbContextOptions<WebShopDbContext> options)
+    {
+        using var context = new WebShopDbContext(options);
+
+        var id = 2;
+        var lastOrder = context.Orders
+            .FromSql($"EXEC dbo.ShowLastOrderForCustomer {id}")
+            .AsEnumerable()
+            .FirstOrDefault();
+
+        Console.WriteLine(lastOrder?.TotalAmount.ToString() ?? "niets gevonden");
+    }
+
+    private static void FromSql(DbContextOptions<WebShopDbContext> options)
+    {
+        using var context = new WebShopDbContext(options);
+
+        var kolomNaam = "name = 'x' OR 1 = 1 --";
+        var filter = "%o";
+
+        var customers = context.Customers
+            .FromSqlRaw($"SELECT * FROM customers WHERE {kolomNaam} LIKE '{filter}'");
+
+        Console.WriteLine(customers.ToQueryString());
+
+        Console.WriteLine(string.Join(", ", customers.Select(c => c.Name)));
+
+
+    }
+
+    private static void ExecuteSql(DbContextOptions<WebShopDbContext> options)
+    {
+        using var context = new WebShopDbContext(options);
+        context.Database.ExecuteSql(
+            $"""
+            CREATE OR ALTER PROCEDURE dbo.ShowLastOrderForCustomer
+            
+                 @customerId As int
+               AS
+               BEGIN
+                    SELECT TOP 1 *
+                    FROM Orders AS o
+                    WHERE o.CustomerId = @customerId
+                    ORDER BY OrderDate DESC;
+            END
+            """
+            );
+    }
+
+    //private static void FromSql(DbContextOptions<WebShopDbContext> options)
+    //{
+    //    using var context = new WebShopDbContext(options);
+
+    //    var customers = context.Customers
+    //        .FromSql()
+    //}
 
     private static void Concurrency(DbContextOptions<WebShopDbContext> options)
     {
@@ -219,12 +277,12 @@ internal class Program
 
     private static void DataSeed(DbContextOptions<WebShopDbContext> options)
     {
-        var customer1 = new Customer { Name = "Mo" };
-        var customer2 = new Customer { Name = "Ab" };
-        var customer3 = new Customer { Name = "Bo" };
-        var customer4 = new Customer { Name = "Cas" };
-        var customer5 = new Customer { Name = "De" };
-        var customer6 = new Customer { Name = "Ferdinand" };
+        var customer1 = new Customer { Name = "Ab", PhoneNumber = "061111111", CreditLimit = 2000.00m };
+        var customer2 = new Customer { Name = "Bo", PhoneNumber = "062222222", CreditLimit = 2000.00m };
+        var customer3 = new Customer { Name = "Cas", PhoneNumber = "063333333", CreditLimit = 180000.00m };
+        var customer4 = new Customer { Name = "De", PhoneNumber = "064444444", CreditLimit = 1800.00m };
+        var customer5 = new Customer { Name = "Ferdinand", PhoneNumber = "065555555", CreditLimit = 1600.00m };
+        var customer6 = new Customer { Name = "Hans", PhoneNumber = "066666666", CreditLimit = 1600.00m };
 
         using var context = new WebShopDbContext(options);
 
