@@ -22,6 +22,7 @@ public class Customer
     //[Column(TypeName = "DateTime2(0)")]
     public DateTime CreatedAt { get; set; }
 
+    public byte[] Rowversion { get; set; } = null!;     // let op dit is voor concurrencyh
 
     // Navigation property to Orders (many kant van de one-to-many)
     public List<Order> Orders { get; set; } = [];

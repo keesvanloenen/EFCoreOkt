@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using MyWebShop.ConsoleApp.DAL;
 using MyWebShop.ConsoleApp.Model;
+using System.Formats.Tar;
+using System.Net.WebSockets;
 using System.Text;
 
 namespace MyWebShop.ConsoleApp;
@@ -25,8 +27,103 @@ internal class Program
         //ShowOrders(options);
         //ShowCustomersAndOrders(options);
         //ExplicitLoading(options);
-        ProjectionAlsReadOnlyHetGevalIs(options);
+        //ProjectionAlsReadOnlyHetGevalIs(options);
 
+        //AddCustomerAndOrders(options);
+        Concurrency(options);
+    }
+
+    private static void Concurrency(DbContextOptions<WebShopDbContext> options)
+    {
+        using var context = new WebShopDbContext(options);
+
+        // User A
+        var customer = context.Customers.Find(1)!;
+        Console.WriteLine($"User A loads: CreditLimit: {customer.CreditLimit}");
+
+        // User B
+        context.Customers
+            .Where(c => c.Id == 1)
+            .ExecuteUpdate(setters => setters.SetProperty(c => c.CreditLimit, 2000m));
+        
+        Console.WriteLine("User B saved: Credit: 2000");
+
+        // User A
+        customer.CreditLimit = 1500m;
+
+        try
+        {
+            context.SaveChanges();
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            Console.WriteLine("💀 Conflict");
+
+            foreach(var entry in ex.Entries)
+            {
+                if (entry.Entity is Customer conflictedCustomer)
+                {
+
+                    // lees db waardes uit
+                    var dbValues = entry.GetDatabaseValues();
+
+                    // database WINS scenario
+                    //entry.CurrentValues.SetValues(dbValues!);
+                    //Console.WriteLine("Changes discarded." );
+
+                    // client WINS scenario
+                    entry.OriginalValues.SetValues(dbValues!);
+                    context.SaveChanges();
+                    Console.WriteLine("Client wins: 1500 euro");
+
+                }
+            }
+        }
+    }
+
+    private static void AddCustomerAndOrders(DbContextOptions<WebShopDbContext> options)
+    {
+        var customerId = 0;
+
+        var newCustomer = new Customer
+        {
+            Name = "Gijs",
+            PhoneNumber = "1234567890",
+            CreditLimit = 100.00m,
+            CreatedAt = DateTime.Now,
+        };
+
+        newCustomer.Orders.AddRange([
+            new Order
+            {
+                OrderDate = DateTime.Now.AddDays(-2),
+                TotalAmount = 149.50m
+            },
+            new Order
+            {
+                OrderDate = DateTime.Now,
+                TotalAmount = 149.50m
+            },
+        ]);
+
+        using (var context = new WebShopDbContext(options))
+        {
+            context.Customers.Add(newCustomer);
+            context.SaveChanges();
+            customerId = newCustomer.Id;
+
+        }   // hier stopt de eerste context (dus connectie)
+
+        // voor nu de controle context (een 2de frisse context)
+        using (var context = new WebShopDbContext(options))
+        {
+            var customer = context.Customers.Find(customerId);
+
+            if (customer is null)
+            {
+                Console.WriteLine("Something horribly went wrong");
+            }
+        }
     }
 
     private static void ProjectionAlsReadOnlyHetGevalIs(DbContextOptions<WebShopDbContext> options)

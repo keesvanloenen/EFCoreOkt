@@ -24,7 +24,7 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 
         builder
             .Property(c => c.CreditLimit)
-            .HasColumnType("decimal(5,2)");
+            .HasColumnType("decimal(8,2)");
 
         builder
             .Property(c => c.CreatedAt)
@@ -39,5 +39,8 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
             .HasMany(c => c.Orders)
             .WithOne(o => o.Customer)
             .HasForeignKey(o => o.CustomerId);
+
+        builder.Property(c => c.Rowversion)
+            .IsRowVersion();
     }
 }

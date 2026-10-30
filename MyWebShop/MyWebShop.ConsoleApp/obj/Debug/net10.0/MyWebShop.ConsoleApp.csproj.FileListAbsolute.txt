@@ -1,3 +1,9 @@
+C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.csproj.AssemblyReference.cache
+C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.AssemblyInfoInputs.cache
+C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.AssemblyInfo.cs
+C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.sourcelink.json
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\MyWebShop.ConsoleApp.exe
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\MyWebShop.ConsoleApp.deps.json
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\MyWebShop.ConsoleApp.runtimeconfig.json
@@ -65,12 +71,6 @@ C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\runtimes\win-
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.Messages.dll
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\bin\Debug\net10.0\runtimes\win\lib\net10.0\System.Security.Cryptography.Pkcs.dll
-C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.csproj.AssemblyReference.cache
-C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.AssemblyInfoInputs.cache
-C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.AssemblyInfo.cs
-C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.csproj.CoreCompileInputs.cache
-C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.sourcelink.json
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebSho.72AEE2E5.Up2Date
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\MyWebShop.ConsoleApp.dll
 C:\Work\EFCoreOkt\MyWebShop\MyWebShop.ConsoleApp\obj\Debug\net10.0\refint\MyWebShop.ConsoleApp.dll
